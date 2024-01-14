@@ -121,60 +121,6 @@ function searchsymbols(k) {
     return -1;
 };
 
-// Included operations to help with reversing.
-function clz64(a) {
-    if (!a) return 64;
-    let count = 0;
-    let b = 0x8000000000000000n;
-    while (!(a & b)) {
-        count++;
-        b >>= 1n;
-    };
-    return count;
-};
-
-function ctz(a, b) {
-    let c = 32;
-    if (b === 'i64') c = 64;
-    if (!a) return c;
-    let count = 0;
-    while (!(a & 1)) {
-        a >>= 1;
-        count++;
-    };
-    return count;
-};
-
-function unsigned(b, d) {
-    if (d === 'i64') {
-        view.setBigInt64(0, BigInt(b));
-        return Number(view.getBigUint64(0));
-    };
-    if (d === 'i32') {
-        view.setInt32(0, b);
-        return view.getUint32(0);
-    };
-    return b;
-};
-
-function popcount(p) {
-    const a = p.toString(2);
-    const b = a.match(/1/g);
-    return b ? b.length : 0;
-};
-
-function rotl(type, arg1, arg2) {
-    sizevalue = 32;
-    if (type === 'i64') sizevalue = 64;
-    return (arg1 << arg2) | (arg1 >>> (sizevalue - arg2));
-};
-
-function rotr(type, arg1, arg2) {
-    sizevalue = 32;
-    if (type === 'i64') sizevalue = 64;
-    return (arg1 >>> arg2) | (arg1 << (sizevalue - arg2));
-};
-
 let c;
 let loops = [];
 
