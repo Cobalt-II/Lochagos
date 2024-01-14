@@ -43,9 +43,6 @@ let params = [];
 let valueparams = [];
 let pos = 1;
 let result;
-let buffer = new ArrayBuffer(16);
-let view = new DataView(buffer);
-let sizevalue = 32;
 
 while (!lines) {
     if (func[0].indexOf('(', pos) > -1) {
