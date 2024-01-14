@@ -292,11 +292,11 @@ function doNumeric(a, b, d, type) {
             operation(c, 2);
             break;
         case 'rotl':
-            c = `(rotl(${type}, ${stack[stack.length - 2]}, ${stack[stack.length - 1]}))`;
+            c = `(rotl(${stack[stack.length - 2]}, ${stack[stack.length - 1]}))`;
             operation(c, 2);
             break;
         case 'rotr':
-            c = `(rotr(${type}, ${stack[stack.length - 2]}, ${stack[stack.length - 1]}))`;
+            c = `(rotr(${stack[stack.length - 2]}, ${stack[stack.length - 1]}))`;
             operation(c, 2);
             break;
         case 'extend_i32_u':
