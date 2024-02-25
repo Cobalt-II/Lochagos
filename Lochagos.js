@@ -135,8 +135,8 @@ function getOffset(b, d) {
 
 function getStackArguments(length) {
     let text = '';
+    let pos = stack.length - length;
     for (let count = length; count > 0; count--) {
-        let pos = stack.length - count;
         text += `${stack[pos]}${count > 1 ? ',' : ''}`;
         stack.splice(pos, 1);
     }
