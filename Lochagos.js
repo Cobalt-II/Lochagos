@@ -423,7 +423,7 @@ while (count < func.length) {
         let type;
         let options = ["i32", "f32", "i64", "f64"];
         for (let count in options) if (o.includes(options[count])) type = options[count]; 
-        lines.push(`if (typeOfValue(${stack[stack.length - 1]}) === ${type}) {`);  
+        lines.push(`if (typeOfValue(${stack[stack.length - 1]}) === "${type}") {`);  
         }
         stack.pop();
     };
